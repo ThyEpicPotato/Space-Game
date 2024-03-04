@@ -30,11 +30,11 @@ end = False
 # Used to manage how fast the screen updates
 clock = pygame.time.Clock()
 
-pygame.mixer.music.load("background_music.wav")
+pygame.mixer.music.load("assets/background_music.wav")
 pygame.mixer.music.set_endevent(pygame.constants.USEREVENT)
 pygame.mixer.music.play()
 
-laser_sound = pygame.mixer.Sound("laser.wav")
+laser_sound = pygame.mixer.Sound("assets/laser.wav")
 font = pygame.font.SysFont('Calibri', 25, True, False)
 
 while not done and variables.display_instructions == True:
@@ -89,7 +89,7 @@ while not done and not variables.dead:
             
         elif event.type == pygame.constants.USEREVENT:
             # Background Music
-            pygame.mixer.music.load("background_music.wav")
+            pygame.mixer.music.load("assets/background_music.wav")
             pygame.mixer.music.play()        
             
         elif event.type == pygame.KEYDOWN:
