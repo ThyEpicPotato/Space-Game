@@ -21,7 +21,7 @@ all_sprites_list.add(arrow)
 
 pygame.display.set_caption("Space Commander")
 
-background_image = pygame.image.load("space.jpg").convert()
+background_image = pygame.image.load("assets/space.jpg").convert()
  
 # Loop until the user clicks the close button.
 done = False
@@ -54,7 +54,7 @@ while not done and variables.display_instructions == True:
         # This could also load an image created in another program.
         # That could be both easier and more flexible.
  
-        logo = pygame.image.load("logo.png")
+        logo = pygame.image.load("assets/logo.png")
         variables.screen.blit(logo, [0, 0])
  
         text = font.render("Click to continue", True, variables.BLACK)
@@ -62,13 +62,13 @@ while not done and variables.display_instructions == True:
  
     if variables.instruction_page == 2:
         # Draw instructions, page 2
-        title_screen = pygame.image.load("title_screen.png")
+        title_screen = pygame.image.load("assets/title_screen.png")
         variables.screen.blit(title_screen, [0, 0])
         
     if variables.instruction_page == 3:
         # Draw instructions, page 2
  
-        instructions = pygame.image.load("instructions.png")
+        instructions = pygame.image.load("assets/instructions.png")
         variables.screen.blit(instructions, [0, 0]) 
         
         text = font.render("Click to continue", True, variables.WHITE)
@@ -95,13 +95,13 @@ while not done and not variables.dead:
         elif event.type == pygame.KEYDOWN:
             # Figure out if it was an arrow key. If so adjust speed.
             if event.key == pygame.K_a:
-                player.image = pygame.image.load("space_ship_left.png")
+                player.image = pygame.image.load("assets/space_ship_left.png")
                 player.direction = "left"
                 variables.x_speed = -5
                 
             elif event.key == pygame.K_d:
                 variables.x_speed = 5
-                player.image = pygame.image.load("space_ship_right.png")
+                player.image = pygame.image.load("assets/space_ship_right.png")
                 player.direction = "right"
                 
             elif event.key == pygame.K_w:
@@ -327,14 +327,14 @@ while not done and not variables.dead:
             boss.rect.x = 901
             boss.rect.y = random.randrange(0, 630)
             boss.x_change = -6
-            boss.image = pygame.image.load("boss_left.png")
+            boss.image = pygame.image.load("assets/boss_left.png")
             
         elif boss.direction == "left" and boss.rect.x <= -277:
             boss.direction = "right"
             boss.rect.x = -278
             boss.rect.y = random.randrange(0, 630)
             boss.x_change = 6
-            boss.image = pygame.image.load("boss_right.png")
+            boss.image = pygame.image.load("assets/boss_right.png")
             
     # Win/Loss Detection
     if variables.level >= 8:
@@ -369,11 +369,11 @@ while not end:
     variables.screen.fill(variables.WHITE)  
             
     if variables.level >= 8:
-        win_screen = pygame.image.load("win_screen.png")
+        win_screen = pygame.image.load("assets/win_screen.png")
         variables.screen.blit(win_screen, [0, 0])
         
     else: 
-        lose_screen = pygame.image.load("game_over.png")
+        lose_screen = pygame.image.load("assets/game_over.png")
         variables.screen.blit(lose_screen, [0, 0])
         
     pygame.display.flip()
